@@ -22,18 +22,21 @@
 </template>
 
 <script lang="ts">
-import { ref } from 'vue';
+import {
+  defineComponent,
+  ref,
+} from 'vue';
 
-export default {
+export default defineComponent({
   name: 'Index',
   setup() {
-    const usd = ref(0);
-    const krw = ref(0);
+    const usd = ref<number>(0);
+    const krw = ref<number>(0);
 
     return {
       usd,
       krw,
-    }
-  }
-}
+    };
+  },
+});
 </script>
