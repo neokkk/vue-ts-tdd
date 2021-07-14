@@ -12,7 +12,7 @@ module.exports = {
     '^.+\\.spec.(j|t)sx?$',
   ],
   transform: {    
-    '^.+\\.[jt]sx?$': 'babel-jest',
+    '^.+\\.(j|t)sx?$': 'babel-jest',
     '^.+\\.vue$': 'vue-jest'
   },
   verbose: true,
