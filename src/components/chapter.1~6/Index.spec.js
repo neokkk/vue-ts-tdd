@@ -2,7 +2,7 @@
 // import Index from './Index.vue';
 import { Dollar } from './Money.type';
 
-describe('Index Component', () => {
+describe('chapter.1~6', () => {
   // const wrapper = shallowMount(Index);
 
   test('무조건 통과하는 케이스', () => {
