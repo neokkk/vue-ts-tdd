@@ -1,13 +1,13 @@
 export class Money {
-  protected cur: string;
+  protected currency: string;
   amount: number;
 
   constructor(
     amount: number,
-    cur: string,
+    currency: string,
   ) {
     this.amount = amount;
-    this.cur = cur;
+    this.currency = currency;
   }
 
   static dollar(amount: number): Dollar {
@@ -18,38 +18,38 @@ export class Money {
     return new Franc(amount, 'CHF');
   }
 
-  public currency(): string {
-    return this.cur;
+  public getCurrency(): string {
+    return this.currency;
   }
 
-  public equals(object: { amount: number, cur: string }): boolean {
-    const money = new Money(object.amount, object.cur);
-    return this.amount === money.amount && this.currency() === object.cur;
+  public equals(object: { amount: number, currency: string }): boolean {
+    const money = new Money(object.amount, object.currency);
+    return this.amount === money.amount && this.getCurrency() === object.currency;
   }
 
   public times(multiplier: number): Money {
-    return new Money(this.amount * multiplier, this.cur);
+    return new Money(this.amount * multiplier, this.currency);
   }
 
   public toString(): string { // only for debugging
-    return this.amount + ' ' + this.cur;
+    return this.amount + ' ' + this.currency;
   }
 }
 
 export class Dollar extends Money {
   constructor(
     amount: number,
-    cur: string,
+    currency: string,
   ) {
-    super(amount, cur);
+    super(amount, currency);
   }
 }
 
 export class Franc extends Money {
   constructor(
     amount: number,
-    cur: string,
+    currency: string,
   ) {
-    super(amount, cur);
+    super(amount, currency);
   }
 }

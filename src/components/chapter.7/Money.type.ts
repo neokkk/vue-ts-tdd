@@ -1,4 +1,4 @@
-export abstract class Money {
+export class Money {
   amount: number;
 
   constructor(amount: number) {
